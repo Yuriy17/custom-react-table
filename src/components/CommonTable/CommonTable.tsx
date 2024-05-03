@@ -22,7 +22,7 @@ export const CommonTable = <T,>({ endpoint, columns }: CommonTableProps<T>) => {
     const fetchTableData = async () => {
       setLoading(true);
       try {
-        const tableData = await fetchData<T>(endpoint);
+        const tableData = await fetchData<any>(endpoint);
 
         setData(tableData.map((item) => {
           const { options, ...rest } = item;
