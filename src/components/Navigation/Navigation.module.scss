@@ -1,0 +1,15 @@
+@use 'src/assets/styles/config/_variables.scss' as *;
+
+.nav {
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 100px;
+}
+.nav-list {
+  display: flex;
+  gap: 20px;
+  &-item {
+
+  }
+}

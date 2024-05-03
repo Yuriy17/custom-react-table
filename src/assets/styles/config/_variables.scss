@@ -1,0 +1,33 @@
+$white-color: #fff;
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$gray-light: rgba(224, 224, 224, 1);
+$gray-hover: rgba(0, 0, 0, 0.04);
+
+$font-color: rgba(0, 0, 0, 0.87);
+
+$link: rgba(0, 0, 0, 0.8);
+$link-hover: rgba(0, 0, 0, 0.6);
+$link-visited: #000f6199;
+
+$mobile-header-height: 57px;
+$desktop-header-height: 112px;
+
+$grid-bp: (
+  xs: 0,
+  sm: 375,
+  md: 768,
+  lg: 1140,
+  xlg: 1400,
+  xl: 1680,
+  xxl: 1936
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 768px,
+  lg: 1140px,
+  xlg: 1400px,
+  xl: 1680px,
+  xxl: 1936px
+);

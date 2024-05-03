@@ -1,0 +1,13 @@
+.intro-page {
+  > h2 {
+    font-size: 30px;
+  }
+  > p {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 900px;
+    + p {
+      margin-top: 20px;
+    }
+  }
+}

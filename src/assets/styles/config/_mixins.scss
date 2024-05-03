@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "sass:math";
+@use '_variables.scss' as *;
+
+@mixin generatePxToRem($property, $values, $color: null, $important: '') { // Use this function only for values less than 100px
+  $remValues: ();
+
+  // Check if $values is a list or a single value
+  @if type-of($values) == list {
+    @each $value in $values {
+      $remValue: #{$value / 16}rem;
+      $remValues: append($remValues, $remValue);
+    }
+  } @else {
+    $remValue: #{$values / 16}rem;
+    $remValues: $remValue;
+  }
+
+  @if $color != null {
+    @if $important != '' {
+      #{$property}: #{$remValues} #{$color}#{$important};
+    } @else {
+      #{$property}: #{$remValues} #{$color};
+    }
+  } @else {
+    @if $important != '' {
+      #{$property}: #{$remValues}$important;
+    } @else {
+      #{$property}: #{$remValues};
+    }
+  }
+}
+
+@mixin grid-mx($value: 'sm') {
+  $width: map.get($grid-breakpoints, $value);
+
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin grid-mn($value: 'sm') {
+  $width: map.get($grid-breakpoints, $value);
+
+  @media (min-width: $width) {
+    @content;
+  }
+}

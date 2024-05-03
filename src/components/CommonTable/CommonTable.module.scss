@@ -1,0 +1,35 @@
+@use 'src/assets/styles/config/_variables.scss' as *;
+
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.commonTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.commonTable th,
+.commonTable td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid $gray-light;
+}
+
+.commonTable th {
+  font-weight: 500;
+  color: $font-color;
+  background-color: $gray-hover;
+}
+
+.commonTable td {
+  color: $font-color;
+}
+
+.commonTable tbody tr:hover {
+  background-color: $gray-hover;
+}

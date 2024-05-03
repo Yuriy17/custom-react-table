@@ -1,0 +1,86 @@
+@use 'config/_reset';
+@use 'config/_variables.scss' as *;
+@use 'config/_functions' as *;
+@use 'config/_mixins' as *;
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+[class*='__container'] {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  @include grid-mn('xl') {
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
+  }
+  @include grid-mn('xxl') {
+    max-width: 1800px;
+  }
+}
+
+/* start transitions */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Add any other transition properties as needed */
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Add any other transition properties as needed */
+}
+/* end transitions */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.link {
+  color: $link;
+  text-decoration: none;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    color: $link-hover
+  }
+  &:visited {
+    color: $link-visited;
+  }
+}
+
+.loader {
+  display: block;
+  color: lightskyblue;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
